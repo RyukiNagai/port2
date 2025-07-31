@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css"/>
+    <title>Portfólio - Ryuki</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  />
+  <link rel="stylesheet" href="style.css" />
+    <style>
+        html, body {
+     height: 100%;
+   }
+       body {
+          font-family: Arial, sans-serif;
+          background-color: #ecf6f7;
+          display: flex;
+          flex-direction: column;
+      }
+      header {
+          background-color: #55b7f8;
+          color: white;
+          text-emphasis-color: white;
+          text-align: center;
+          padding: 30px;
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          font-size:x-large;
+          z-index: 2000;
+      }
+      main {
+          font-family: Arial, sans-serif;
+          font-size:larger;
+          background-color: #ecf6f7;
+          padding-top: 310px;
+          flex: 1;
+          padding-bottom: 30px;
+      }
+       footer {
+           text-align: center;
+           background-color: #3d4394;
+           padding: 50px;
+           font-size: 0.9em;
+           color: white;
+       }
+      #main{
+        justify-items: center;
+        text-align: center;
+        align-self: center;
+      }
+      .clock-button{
+        position: fixed;
+        top: 210px;
+        right: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+      }
+      .lang-button{
+        position: fixed;
+        top: 210px;
+        right: 80px;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+      }
+      .lang-button button{
+        background-color: transparent;
+        height: 30px;
+        border-color: transparent;
+      }
+      .clock-button button{
+        background-color: transparent;
+        height: 30px;
+        border-color: transparent;
+      }
+      .container img{
+        margin-bottom: 50px;
+      }
+      .badge{
+        background-color: aquamarine;
+        width: 80px;
+        height: 30px;
+        padding-top: 10px;
+      }
+      .badge-container{
+        display: flex;
+        justify-content:center;
+        gap: 50px;
+        margin-top: 30px;
+      }
+      #description{
+        margin-top: 40px;
+      }
+      .card-container{
+        margin-top: 30px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+    margin-left: auto;
+    margin-right: auto;
+      }
+      .card{
+  max-width: 1000px;
+        border-radius: 2px;
+        border-color: black;
+        align-items: center;
+        border-radius: 15px;
+        box-shadow: 0px 1px 3px black;
+      }
+      .card img{
+        margin: 10px;
+        border-radius: 15px;
+      }
+      .card-body h6{
+        margin-top: 20px;
+      }
+      .card-body button{
+        background-color: rgb(64, 115, 255);
+        margin-top: 20px;
+      }
+      .card-body button:hover{
+        background-color: blue;
+  cursor: pointer;
+      }
+      .btn-group{
+        position: fixed;
+        top: 210px;
+        left: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+      }
+      #jp12{
+        background-color: gray;
+      }
+      #jp12:hover{
+        cursor: pointer;
+        background-color: rgb(63, 63, 63);
+      }
+      #bg{
+        background-image: url(pngtree-a-background-of-orange-blue-and-yellow-gradients-with-gritty-appearance-image_16233934.jpg);
+  background-size: 160%;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1000;
+      }
+      #name{
+        margin-top: 20px;
+      }
+      .form-floating{
+        padding-bottom: 20px;
+        width: 700px;
+      }
+      li{
+        padding: 0;
+        margin-bottom: -45px;
+      }
+      li button{
+        background-color: transparent;
+        border-color: transparent;
+      }
+      .dropdown-menu{
+        max-width: 20px;
+      }
+       a{
+        text-decoration: none;
+        color: white;
+       }
+    </style>
+    </head>
+    <body>
+      <header>
+        <nav>
+          <a href="index.html" id="link1">ポートフォリオ</a>
+          <p></p>
+          <a href="Hobbies.html" id="link2">趣味</a>
+          <p></p>
+          <a href="chat.html" id="link3">フォーム</a>
+        </nav>
+      </header>
+      <main id="bg">
+        <div class="container">
+        <div class="lang-button">
+          <button onclick="turnLang()"><img src="8462185.png" alt="" width="30" height="30" ></button>
+        </div>
+        <span class="clock-button">
+              <button onclick="showTime()"><img src="Black-Time-Clock-Transparent-File.png" alt="" width="20" height="20" ></button>
+              <div id="time"></div>
+        </span>
+          <span class="btn-group dropend">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" id="jp12">
+              背景
+            </button>
+            <ul class="dropdown-menu">
+              <li><button onclick="turnBg('pngtree-a-background-of-orange-blue-and-yellow-gradients-with-gritty-appearance-image_16233934.jpg')" ><img src="pngtree-a-background-of-orange-blue-and-yellow-gradients-with-gritty-appearance-image_16233934.jpg" alt="" width="30" height="30"></button></li>
+              <li><button onclick="turnBg('chinese-bamboo-old-paper-background_1182-1412.jpeg')" ><img src="chinese-bamboo-old-paper-background_1182-1412.jpeg" alt="" width="30" height="30"></button></li>
+              <li><button onclick="turnBg('fundo-da-aguarela-do-verao_52683-84831.jpeg')" ><img src="fundo-da-aguarela-do-verao_52683-84831.jpeg" alt="" width="30" height="30"></button></li>
+            </ul>
+          </span>
+        </div>
+      <div class="container" id="main"> 
+        <img class="rounded-circle" src="d2984ec4b65a8568eab3dc2b640fc58e-removebg-preview.png" alt="" width="300" height="300">
+        <h1 id="jp1">長井隆紀と申します</h1>
+        <p id="description">以下フォームに好きに書いて頂ければ幸いです。</p>
+        <section>
+          <hr>
+      <div class="card-container">
+        <div class="card" width="400">
+          <div class="card-body">
+            <h3 class="card-title"  id="jp4">フォーム</h3>
+            <form id="formulario" novalidate>
+            <div class="form-floating">
+              <input  class="form-control" id="name" placeholder="Nome" type="text" name="nome" required>
+              <label for="name" id="jp5">名前</label>
+              <div class="invalid-feedback">Please enter a message in the textarea.
+              </div>
+            </div>
+            <div class="form-floating">
+              <input  class="form-control" id="email" placeholder="nome@exemplo.com" type="text" required>
+              <label for="floatingInput" id="jp6">メールアドレス</label>
+              <div class="invalid-feedback">Please enter a message in the textarea.
+              </div>
+            </div>
+            <div class="form-floating">
+              <input type="text" class="form-control" id="message" placeholder="Mensagem" required>
+              <label for="message" id="jp7">メッセージ</label>
+              <div class="invalid-feedback">Please enter a message in the textarea.
+              </div>
+              <div >
+                <button  class="btn btn-secondary" type="submit" id="jp8">送信</button>
+              </div>
+            </div>
+          </form>
+              </div>
+              </div>
+              </div>
+            </div>
+          </div>
+          </div>
+          </div>
+        </section>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous">
+      </script>
+      <script>
+        let timeVisible = false;
+        function showTime(){
+          const timeEl = document.getElementById("time");
+          if(!timeVisible){
+           const now = new Date();
+            timeEl.innerText = now.toString();
+            timeEl.style.display = "block";
+          }else{
+            timeEl.style.display = "none";
+          }
+          timeVisible = !timeVisible;
+          }
+      </script>
+      <script>
+        let actLang = 'jp';
+          function turnLang(){
+            const t1 = document.getElementById("jp1");
+            const t2 = document.getElementById("description");
+            const t4 = document.getElementById("jp4");
+            const t5 = document.getElementById("jp5");
+            const t6 = document.getElementById("jp6");
+            const t7 = document.getElementById("jp7");
+            const t8 = document.getElementById("jp8");
+            const t12 = document.getElementById("jp12");
+            const t13 = document.getElementById("link1");
+            const t14 = document.getElementById("link2");
+            const t15 = document.getElementById("link3");
+            if(actLang === 'jp'){
+              t1.innerHTML = "Chamo-me Ryuki Nagai";
+              t2.innerHTML = "Agradeceria se puder escrever o que lhe vier no formulário abaixo";
+              t4.innerHTML = "Formulário";
+              t5.innerHTML = "Nome";
+              t6.innerHTML = "Endereço e-mail";
+              t7.innerHTML = "Mensagem";
+              t8.innerHTML = "Enviar";
+              t12.innerHTML = "Plano de fundo";
+              t13.innerHTML = "Portfólio";
+              t14.innerHTML = "Hobbies";
+              t15.innerHTML = "Formulário";
+               actLang = 'pt';
+            }else{
+              t1.innerHTML = "長井隆紀と申します";
+      t2.innerHTML = "以下フォームに好きに書いて頂ければ幸いです。";
+      t4.innerHTML = "フォーム";
+      t5.innerHTML = "名前";
+      t6.innerHTML = "メールアドレス";
+      t7.innerHTML = "メッセージ";
+      t8.innerHTML = "送信";
+      t12.innerHTML = "背景";
+      t13.innerHTML = "ポートフォリオ";
+      t14.innerHTML = "趣味";
+      t15.innerHTML = "フォーム";
+      actLang = 'jp';
+            }
+          }
+          </script>
+          <script>
+            function turnBg(actbg){
+              const bg = document.getElementById("bg");
+  bg.style.backgroundImage = `url('${actbg}')`;
+              bg.style.backgroundSize = 'cover';
+              bg.style.backgroundPositionX = '100';
+              bg.style.backgroundRepeat = 'no-repeat';
+            }
+          </script><script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById("formulario");
+
+    form.addEventListener("submit", function (event) {
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+        form.classList.add("was-validated");
+        return;
+      }
+      event.preventDefault();
+      form.reset();
+      setTimeout(() => {
+        window.location.href = "responses.html";
+      }, 300);
+    });
+  });
+</script>
+      </main>
+      <footer>
+        <h1>
+      <i class="bi bi-github"></i></h1>
+        <h1>Copyright © 2025</h1>
+    </footer>
+    </body>
