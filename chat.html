@@ -156,12 +156,12 @@
   background-repeat: no-repeat;
   z-index: 1000;
       }
-      #name{
-        margin-top: 20px;
-      }
       .form-floating{
         padding-bottom: 20px;
         width: 700px;
+      }
+      .form-floating label{
+        font-size:medium;
       }
       li{
         padding: 0;
@@ -224,19 +224,19 @@
             <div class="form-floating">
               <input  class="form-control" id="name" placeholder="Nome" type="text" name="nome" required>
               <label for="name" id="jp5">名前</label>
-              <div class="invalid-feedback">Please enter a message in the textarea.
+              <div class="invalid-feedback" id="invalid">必要な情報をご記入ください
               </div>
             </div>
             <div class="form-floating">
               <input  class="form-control" id="email" placeholder="nome@exemplo.com" type="text" required>
               <label for="floatingInput" id="jp6">メールアドレス</label>
-              <div class="invalid-feedback">Please enter a message in the textarea.
+              <div class="invalid-feedback" id="invalid2">必要な情報をご記入ください
               </div>
             </div>
             <div class="form-floating">
               <input type="text" class="form-control" id="message" placeholder="Mensagem" required>
               <label for="message" id="jp7">メッセージ</label>
-              <div class="invalid-feedback">Please enter a message in the textarea.
+              <div class="invalid-feedback" id="invalid3">必要な情報をご記入ください
               </div>
               <div >
                 <button  class="btn btn-secondary" type="submit" id="jp8">送信</button>
@@ -274,6 +274,9 @@
             const t6 = document.getElementById("jp6");
             const t7 = document.getElementById("jp7");
             const t8 = document.getElementById("jp8");
+            const t9 = document.getElementById('invalid');
+            const t10 = document.getElementById('invalid2');
+            const t11 = document.getElementById('invalid3');
             const t12 = document.getElementById("jp12");
             const t13 = document.getElementById("link1");
             const t14 = document.getElementById("link2");
@@ -286,6 +289,9 @@
               t6.innerHTML = "Endereço e-mail";
               t7.innerHTML = "Mensagem";
               t8.innerHTML = "Enviar";
+              t9.innerHTML = "Por favor, preencha com as infromações necessárias"
+              t10.innerHTML = "Por favor, preencha com as infromações necessárias"
+              t11.innerHTML = "Por favor, preencha com as infromações necessárias"
               t12.innerHTML = "Plano de fundo";
               t13.innerHTML = "Portfólio";
               t14.innerHTML = "Hobbies";
@@ -299,6 +305,9 @@
       t6.innerHTML = "メールアドレス";
       t7.innerHTML = "メッセージ";
       t8.innerHTML = "送信";
+      t9.innerHTML = "必要な情報をご記入ください";
+      t10.innerHTML = "必要な情報をご記入ください";
+      t11.innerHTML = "必要な情報をご記入ください";
       t12.innerHTML = "背景";
       t13.innerHTML = "ポートフォリオ";
       t14.innerHTML = "趣味";
