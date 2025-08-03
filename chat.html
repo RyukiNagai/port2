@@ -247,9 +247,6 @@
               </div>
               </div>
             </div>
-          </div>
-          </div>
-          </div>
         </section>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous">
       </script>
@@ -318,19 +315,26 @@
               bg.style.backgroundPositionX = '100';
               bg.style.backgroundRepeat = 'no-repeat';
             }
-          </script><script>
+          </script>
+          <script>
   document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById("formulario");
-
     form.addEventListener("submit", function (event) {
-      if (!form.checkValidity()) {
         event.preventDefault();
+      if (!form.checkValidity()) {
         event.stopPropagation();
         form.classList.add("was-validated");
         return;
       }
       event.preventDefault();
-      form.reset();
+    const nome = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const mensagem = document.getElementById("message").value;
+    const novaResposta = { nome, email, mensagem };
+    const resposta = JSON.parse(localStorage.getItem("respostaFormulario")) || [];
+    resposta.push(novaResposta);
+    localStorage.setItem("respostaFormulario", JSON.stringify(resposta));
+    form.reset();
       setTimeout(() => {
         window.location.href = "responses.html";
       }, 300);
