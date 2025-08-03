@@ -15,82 +15,104 @@
           display: flex;
           flex-direction: column;
       }
-      header {
-          background-color: #55b7f8;
-          color: white;
-          text-emphasis-color: white;
-          text-align: center;
-          padding: 30px;
-          position: fixed;
-          top: 0;
-          left: 0;
-          right: 0;
-          font-size:x-large;
-      }
-      footer {
-          text-align: center;
-          background-color: #573d94;
-          padding: 10px;
-          font-size: 0.9em;
-          color: white;
-      }
       main {
           font-family: Arial, sans-serif;
           font-size:larger;
           background-color: #ecf6f7;
-          padding-top: 150px;
           flex: 1;
       }
-       a{
-        text-decoration: none;
-       }
-       #cabeçalho{
-        color: white;
-       }
-       #legenda{
-        color: black;
-       }
   .card-container{
     display: inline-flex;
     gap: 30px;
     flex-wrap: wrap;
-    justify-content:center;
+    justify-content:start;
     margin-left: auto;
     margin-right: auto;
   }
   .card{
     display:flex;
     flex-direction: column;
-    align-items: center;
-    max-width: 400px;
+    align-items: start;
+    max-width: 1790px;
+    min-width: 1000px;
+    width: fit-content;
+    margin-left: 50px;
+    padding-left: 15px;
+    padding-right: 10px;
+    box-shadow: 0px 1px 3px black;
+    border-radius: 10px;
+    border-color: black;
   }
-  .card figcaption {
-    text-align: center;
-  }
-  .card img{
-    width: 150px;
-    height: 150px;
+  .card-text{
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    white-space: normal;
+    max-width: 1790px;
   }
        h1{
         padding-left: 50px;
        }
-       
+       h3{
+        padding-left: 50px;
+       }
        hr{
         margin-left: 50px;
        }
-       select{
+       button{
+        background-color: transparent;
+        border-color: transparent;
         margin-left: 50px;
        }
-       #play{
-        display: flex;
-  background-color: transparent;
-  cursor: pointer;
+       button:hover{
+        cursor: pointer;
+       }
+       img{
+        background-color: transparent;
+       }
+       #delete{
+        width: fit-content;
+        height: fit-content;
        }
     </style>
 </head>
 <body>
     <main>
         <h1>Sua mensagem foi enviada!</h1>
+        <hr>
+          <h1>Respostas do Formulário</h1>
+          <div>
+            <button onclick="deleteAll()"><img src="trash.png" alt="" width="30"></button>
+          </div>
+          <div class="card-container" id="respostas">
+        </div>
+          <hr>
+          <script>
+            const dados = JSON.parse(localStorage.getItem("respostaFormulario"));
+    const cardcontainer = document.getElementById('respostas');
+            if (dados && dados.length > 0) {
+  dados.forEach(item => {
+    const card = document.createElement('div');
+    card.classList.add('card');
+              card.innerHTML = `
+              <div class="card-text">
+                <p><strong>Nome:</strong> ${item.nome}</p>
+                <p><strong>Email:</strong> ${item.email}</p>
+                <p><strong>Mensagem:</strong> ${item.mensagem}</p>
+        </div>
+              `;
+              cardcontainer.appendChild(card);
+      });
+       } else {
+              cardcontainer.innerHTML = "<h3>Nenhuma resposta encontrada.</h3>";
+            }
+          </script>
+          <script>
+            function deleteAll(){
+    const cardcontainer = document.getElementById('respostas');
+              localStorage.removeItem("respostaFormulario");
+              cardcontainer.innerHTML = "<h3>Nenhuma resposta encontrada.</h3>";
+            }
+          </script>
     </main>
 </body>
 </html>
